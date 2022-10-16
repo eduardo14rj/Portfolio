@@ -6,17 +6,13 @@ on:
       - main
 
 jobs:
-  building:
-    runs-on: ubuntu-18.04
+  Build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3.5.1
-     # - name: install dependencies
-        #run: |
-         # cd ./portfolio-eduardo
-          #rm -f yarn.lock
-          #rm -f package-lock.json
-          
+        with: 
+          node-version: 18.x
       - name: Build web-app
         run: |
           cd ./portfolio-eduardo
@@ -30,8 +26,8 @@ jobs:
           
   deploy:
           name: Deploy
-          runs-on: ubuntu-18.04
-          needs: building
+          runs-on: ubuntu-latest
+          needs: Build
           steps:
             - name: Download artifact
               uses: actions/download-artifact@v2
