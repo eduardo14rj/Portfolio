@@ -19,12 +19,12 @@ jobs:
           npm ci
           npm run build
       - name: upload-files
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v3
         with: 
-          name: production-file
+          name: production-files
           path: ./dist
           
-  deploy:
+  Deploy:
           name: Deploy
           runs-on: ubuntu-latest
           needs: Build
@@ -32,7 +32,7 @@ jobs:
             - name: Download artifact
               uses: actions/download-artifact@v2
               with: 
-                name: production-file
+                name: production-files
                 path: ./dist
             - name: Deploy to gh-pages
               uses: peaceiris/actions-gh-pages@v3
