@@ -19,5 +19,6 @@ jobs:
           
       - name: Build web-app
         run: |
+          cd ./portfolio-eduardo/
           npm ci
           npm run build
