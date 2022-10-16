@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  building:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v3
@@ -22,3 +22,26 @@ jobs:
           cd ./portfolio-eduardo
           npm ci
           npm run build
+      - name: upload-files
+        uses: actions/upload-artifact@v3.1.0
+        with: 
+          name: production-file
+          path: ./dist
+          
+  deploy:
+          name: Deploy
+          runs-on: ubuntu-18.04
+          needs: building
+          steps:
+            - name: Download artifact
+              uses: actions/download-artifact@v3.1.0
+              with: 
+                name: production-file
+                path: ./dist
+            - name: Deploy to gh-pages
+              uses: peacerisis/actions-gh-pages@v3
+              with: 
+                github_token: ${{ secrets.GH_ACCESS_TOKEN }}
+                publish_dir: ./dist
+                
+            
