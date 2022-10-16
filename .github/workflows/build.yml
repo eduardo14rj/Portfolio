@@ -13,5 +13,5 @@ jobs:
       - uses: actions/setup-node@v3.5.1
       - name: Build web-app
         run: |
-          npm ci
+          npm ci --ignore-scripts
           npm run build
