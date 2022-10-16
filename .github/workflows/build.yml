@@ -15,5 +15,6 @@ jobs:
           node-version: '16.x'
       - name: Build web-app
         run: |
+          npm i
           npm ci
           npm run build
