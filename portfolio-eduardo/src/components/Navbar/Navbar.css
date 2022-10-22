@@ -1,0 +1,30 @@
+@layer base {
+
+    .navbar {
+        @apply fixed w-screen h-[64px] bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm z-20;
+    }
+
+    .navbar-container {
+        @apply container lg:mx-auto lg:flex lg:items-center lg:justify-between;   
+    }
+
+    .navbar-container ul {
+        @apply flex lg:space-x-6 font-medium dark:text-white;
+    }
+
+    .navbar-container ul {
+        @apply flex flex-row text-center;
+    }
+
+    .mobile-navbar {
+        @apply fixed h-screen w-screen bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm z-20;
+    }
+
+    .mobile-navbar .navbar-container {
+        @apply h-screen flex flex-col justify-center items-center;
+    }
+
+    .mobile-navbar .navbar-container ul {
+        @apply flex flex-col space-y-8;
+    }
+}
