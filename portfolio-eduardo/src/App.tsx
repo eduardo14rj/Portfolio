@@ -6,7 +6,7 @@ import Empresas from "./components/sections/Empresas"
 import ContandoSobreMim from "./components/sections/ContandoSobreMim"
 import { isMobile } from 'react-device-detect'
 import { scroller } from 'react-scroll'
-import Navbar from './components/Navbar/Index'
+import Navbar from './components/Navbar/Navbar'
 function App() {
   function moveSection(elementId: string, offset?: number) {
     scroller.scrollTo(elementId, {
