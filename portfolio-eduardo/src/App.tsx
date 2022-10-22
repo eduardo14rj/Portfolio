@@ -1,4 +1,3 @@
-import Navbar from './components/Navbar/Index';
 import { BsArrowDownCircle } from 'react-icons/bs'
 import { InView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
@@ -7,6 +6,7 @@ import Empresas from "./components/sections/Empresas"
 import ContandoSobreMim from "./components/sections/ContandoSobreMim"
 import { isMobile } from 'react-device-detect'
 import { scroller } from 'react-scroll'
+import Navbar from './components/Navbar/Index'
 function App() {
 
   function moveSection(elementId: string, offset?: number) {
