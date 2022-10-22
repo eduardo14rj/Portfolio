@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar/Index"
+import Navbar from './components/Navbar/Index';
 import { BsArrowDownCircle } from 'react-icons/bs'
 import { InView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
