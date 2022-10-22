@@ -6,7 +6,7 @@ const ContandoSobreMim: React.FC = () => {
     return (
         <section id="SobreMim" className="h-screen relative">
             <div className="container mx-auto lg:px-0 px-8">
-                <h2 className="text-dark-blue mb-12 gap-2 text-2xl font-bold flex dark:text-white">
+                <h2 className="text-dark-blue lg:mb-12 mb-6 gap-2 text-2xl font-bold flex dark:text-white">
                     Contando um pouco mais sobre mim
                     <BsArrow90DegRight className="rotate-90 text-[32px]" />
                 </h2>

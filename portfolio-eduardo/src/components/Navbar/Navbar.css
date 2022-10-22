@@ -1,7 +1,7 @@
 @layer base {
 
     .navbar {
-        @apply fixed w-screen h-[64px] bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm z-20;
+        @apply fixed w-screen h-[64px] bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm z-20 top-0;
     }
 
     .navbar-container {
@@ -14,6 +14,13 @@
 
     .navbar-container ul {
         @apply flex flex-row text-center;
+    }
+
+    .navbar-container ul li a, .mobile-navbar ul li a {
+        @apply cursor-pointer;
+    }
+    .navbar-container ul li a.active, .mobile-navbar ul li a.active {
+        @apply text-green;
     }
 
     .mobile-navbar {

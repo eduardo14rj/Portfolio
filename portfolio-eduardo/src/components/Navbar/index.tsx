@@ -1,16 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import logo from '../../assets/Logo.svg'
 import { HiMenuAlt2 } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 import { isMobile } from 'react-device-detect'
-import { CgClose } from 'react-icons/cg';
+import { CgClose } from 'react-icons/cg'
+import { Link } from 'react-scroll'
+
+type CLinkType = {
+    text: string
+    to: string
+    offset?: number
+}
+
 const Navbar: React.FC = () => {
     const [view, setView] = useState<boolean>(isMobile);
+
+    const CLink: React.FC<CLinkType> = (prop) => {
+        return (
+            <Link
+                to={prop.to} activeClass='active' smooth spy duration={400} offset={prop.offset}
+                onClick={() => isMobile && setView(true)}>
+                {prop.text}
+            </Link>
+        )
+    }
 
     return (
         <>
             <motion.nav
-            style={{y: "100%"}}
+                style={{ y: isMobile ? "100%" : 0 }}
                 animate={{ y: view ? "100%" : "0px" }}
                 transition={{ ease: "easeInOut" }}
                 className={isMobile ? "mobile-navbar" : "navbar"}>
@@ -23,10 +41,11 @@ const Navbar: React.FC = () => {
                     </div>
                     <ul className={isMobile ? "mobile" : ""}>
                         <li>
-                            <a href="#!">Principal</a>
+                            <CLink text="Principal" to='Principal' offset={0} />
                         </li>
                         <li>
-                            <a href="#!">Sobre mim</a>
+                            {/* <a href="#!">Sobre mim</a> */}
+                            <CLink text='Sobre mim' to='SobreMim' offset={-120} />
                         </li>
                         <li>
                             <a href="#!">Portfólio</a>

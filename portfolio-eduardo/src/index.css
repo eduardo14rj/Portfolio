@@ -9,5 +9,6 @@
     html {
         font-family: "Inter", system-ui, sans-serif;
         box-sizing: border-box;
+        @apply bg-white dark:bg-slate-900;
     }    
 }

@@ -6,7 +6,7 @@
     .eo-btn-dark {
         @apply lg:bg-dark-blue lg:text-white lg:hover:bg-dark-blue-50;
         /* dark */
-        @apply dark:bg-white dark:text-dark-blue dark:hover:bg-slate-400;
+        @apply lg:dark:bg-white lg:dark:text-dark-blue lg:dark:hover:bg-slate-400;
     }
 
     .eo-btn-green {

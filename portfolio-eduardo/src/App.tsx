@@ -1,17 +1,27 @@
-import Navbar from "./components/Navbar"
-import { BsArrow90DegDown, BsArrow90DegRight, BsArrowDownCircle } from 'react-icons/bs'
+import Navbar from "./components/Navbar/Index"
+import { BsArrowDownCircle } from 'react-icons/bs'
 import { InView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import Animations from "./components/Animations/Animation"
 import Empresas from "./components/sections/Empresas"
 import ContandoSobreMim from "./components/sections/ContandoSobreMim"
+import { isMobile } from 'react-device-detect'
+import { scroller } from 'react-scroll'
 function App() {
-  const isMobile = window.innerWidth < 1024;
+
+  function moveSection(elementId: string, offset?: number) {
+    scroller.scrollTo(elementId, {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+      offset: offset
+    })
+  }
 
   return (
-    <main className="bg-white dark:bg-slate-900">
+    <main>
       <Navbar />
-      <section id="principal" className="h-screen relative">
+      <section id="Principal" className="h-screen relative">
         <div className="absolute right-[80%] w-[480px] top-80 bg-green h-[480px] rounded-full blur-[100px] opacity-75" />
         <div className="overflow-x-hidden absolute w-screen right-0 h-screen">
           <div className="absolute left-[80%] w-[480px] bg-pink h-[480px] rounded-full blur-[100px] opacity-75" />
@@ -20,30 +30,25 @@ function App() {
         <div className="container mx-auto z-10 relative lg:px-0 px-8">
           <div className="grid grid-cols-1 lg:grid-cols-11 h-screen items-center">
             <div className="col-span-1 lg:col-span-5 text-dark-blue text-center lg:text-start dark:text-white space-y-6">
-              <InView>
-                {
-                  ({ ref, inView }) => (
-                    <motion.h1 ref={ref}
-                      style={{ opacity: 0, y: -80 }}
-                      animate={inView && { opacity: 1, y: 0 }}
-                      transition={{ duration: 1 }}
-                      className="font-bold lg:text-4xl text-2xl">
-                      Desenvolvedor Front-End, <br />
-                      UX/UI designer e <br />
-                      Webdesigner.
-                    </motion.h1>
-                  )
-                }
-
-              </InView>
+              <Animations
+                style={{ opacity: 0, y: -80 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <h1 className="font-bold lg:text-4xl text-2xl">
+                  Desenvolvedor Front-End, <br />
+                  UX/UI designer e <br />
+                  Webdesigner.
+                </h1>
+              </Animations>
               <p>
                 Apaixonado por desenvolvimento web, sempre busco
                 desenvolver sites de alta qualidade além de sofisticado e
                 fora da caixa.
               </p>
-              <button className="eo-btn eo-btn-dark font-bold ">
+              <button className="eo-btn eo-btn-dark font-bold" onClick={() => moveSection("SobreMim", -120)}>
                 Vou contar um pouco mais sobre min
-                <BsArrowDownCircle />
+                <BsArrowDownCircle className="animate-bounce lg:animate-none" />
               </button>
             </div>
             <div className="col-span-6 relative h-full lg:h-full hidden lg:block">
