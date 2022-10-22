@@ -8,7 +8,6 @@ import { isMobile } from 'react-device-detect'
 import { scroller } from 'react-scroll'
 import Navbar from './components/Navbar/Index'
 function App() {
-
   function moveSection(elementId: string, offset?: number) {
     scroller.scrollTo(elementId, {
       duration: 800,
