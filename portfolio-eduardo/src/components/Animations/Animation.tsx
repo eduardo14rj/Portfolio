@@ -6,7 +6,7 @@ type AnimationsType = {
     animate?: AnimationProps["animate"],
     transition?: AnimationProps["transition"]
     style?: MotionStyle
-    children?: React.ReactNode
+    children: (tete: boolean) => React.ReactNode
 }
 
 const Animations: React.FC<AnimationsType> = (prop) => {
@@ -19,7 +19,7 @@ const Animations: React.FC<AnimationsType> = (prop) => {
                         animate={inView && prop.animate}
                         transition={prop.transition}
                     >
-                        {prop.children}
+                        {prop.children(inView)}
                     </motion.div>
                 )
             }

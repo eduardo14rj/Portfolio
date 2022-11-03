@@ -7,6 +7,7 @@ import ContandoSobreMim from "./components/sections/ContandoSobreMim"
 import { isMobile } from 'react-device-detect'
 import { scroller } from 'react-scroll'
 import Navbar from './components/Navbar/Navbar'
+import Skills from './components/sections/Skills/Index'
 function App() {
   function moveSection(elementId: string, offset?: number) {
     scroller.scrollTo(elementId, {
@@ -34,21 +35,27 @@ function App() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
               >
-                <h1 className="font-bold lg:text-4xl text-2xl">
-                  Desenvolvedor Front-End, <br />
-                  UX/UI designer e <br />
-                  Webdesigner.
-                </h1>
+                {
+                  () => (
+                    <h1 className="font-bold lg:text-4xl text-2xl">
+                      Desenvolvedor Front-End, <br />
+                      UX/UI designer e <br />
+                      Webdesigner.
+                    </h1>
+                  )
+                }
               </Animations>
               <p>
                 Apaixonado por desenvolvimento web, sempre busco
                 desenvolver sites de alta qualidade além de sofisticado e
                 fora da caixa.
               </p>
-              <button className="eo-btn eo-btn-dark font-bold" onClick={() => moveSection("SobreMim", -120)}>
-                Vou contar um pouco mais sobre min
-                <BsArrowDownCircle className="animate-bounce lg:animate-none" />
-              </button>
+              <div className='flex justify-center md:justify-start w-full'>
+                <button className="eo-btn eo-btn-dark font-bold" onClick={() => moveSection("SobreMim", -120)}>
+                  Vou contar um pouco mais sobre min
+                  <BsArrowDownCircle className="animate-bounce lg:animate-none" />
+                </button>
+              </div>
             </div>
             <div className="col-span-6 relative h-full lg:h-full hidden lg:block">
               <InView>
@@ -77,6 +84,8 @@ function App() {
       <Empresas />
 
       <ContandoSobreMim />
+
+      <Skills />
     </main>
   )
 }

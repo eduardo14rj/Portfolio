@@ -8,7 +8,4 @@
         /* dark */
         @apply lg:dark:bg-white lg:dark:text-dark-blue lg:dark:hover:bg-slate-400;
     }
-
-    .eo-btn-green {
-    }
 }

@@ -48,10 +48,11 @@ const Navbar: React.FC = () => {
                             <CLink text='Sobre mim' to='SobreMim' offset={-120} />
                         </li>
                         <li>
-                            <a href="#!">Portfólio</a>
+                            {/* <a href="#!">Portfólio</a> */}
+                            <CLink text="Skills" to="Skills" offset={0} />
                         </li>
                         <li>
-                            <a href="#!">Skills</a>
+                            <a href="#!">Portfólio</a>
                         </li>
                     </ul>
                 </div>
@@ -59,12 +60,10 @@ const Navbar: React.FC = () => {
             </motion.nav>
             <button className='fixed bottom-12 right-12 z-20 lg:hidden
             w-16 h-16 bg-dark-blue rounded-full text-white flex items-center justify-center'
-                onClick={() => setView(!view)}
-            >
+                onClick={() => setView(!view)}>
                 {
                     view ? <HiMenuAlt2 /> : <CgClose />
                 }
-
             </button>
         </>
     );
