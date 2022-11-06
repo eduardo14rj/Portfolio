@@ -8,6 +8,8 @@ import { isMobile } from 'react-device-detect'
 import { scroller } from 'react-scroll'
 import Navbar from './components/Navbar/Navbar'
 import Skills from './components/sections/Skills/Index'
+import Portfolio from './components/sections/Portfolio'
+import Footer from './components/sections/Footer/Index'
 function App() {
   function moveSection(elementId: string, offset?: number) {
     scroller.scrollTo(elementId, {
@@ -86,6 +88,10 @@ function App() {
       <ContandoSobreMim />
 
       <Skills />
+
+      <Portfolio />
+
+      <Footer />
     </main>
   )
 }

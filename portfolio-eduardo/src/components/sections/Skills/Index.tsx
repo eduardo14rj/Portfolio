@@ -25,7 +25,7 @@ const Skills: React.FC = () => {
                         <h2 className='text-2xl font-bold text-dark-blue dark:text-white mb-4'>Skills</h2>
                         <p className='mb-6 text-dark-blue dark:text-white mr-4'>Listando cada skills, tecnologias e frameworks que eu tenho experiência / que pretendo aprender futuramente.</p>
 
-                        <div className='font-bold mb-8'>
+                        <div className='font-bold mb-8 text-[12px] md:text-[16px]'>
                             <button onClick={() => setOpcao("Linguagens")} className={`border-2 transition-all py-3 px-5 border-dark-blue dark:text-white dark:border-white rounded-l-full
                         ${opcao === 'Linguagens' && "bg-dark-blue text-white dark:bg-white dark:text-dark-blue"}
                         `}>

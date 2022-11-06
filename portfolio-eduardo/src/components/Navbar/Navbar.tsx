@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
                             <CLink text="Skills" to="Skills" offset={0} />
                         </li>
                         <li>
-                            <a href="#!">Portfólio</a>
+                            <CLink text="Portfólio" to="Portfolio" offset={0} />
                         </li>
                     </ul>
                 </div>
